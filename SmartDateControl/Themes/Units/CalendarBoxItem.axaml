@@ -1,0 +1,35 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:SmartDateControl.Themes.Units">
+    <Design.PreviewWith>
+        <controls:CalendarBoxItem />
+    </Design.PreviewWith>
+
+    <Style Selector="TextBlock.DayStyle">
+        <Setter Property="Text" Value="{Binding RelativeSource={RelativeSource TemplatedParent},Path=Content,StringFormat={}{0}}"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    
+    <Style Selector="controls|CalendarBoxItem">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="#666666"/>
+        <Setter Property="Width" Value="28"/>
+        <Setter Property="Height" Value="28"/>
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid Background="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                    <Border Background="{TemplateBinding Background}" Margin="4" CornerRadius="4"/>
+                    <TextBlock Classes="DayStyle"/>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+        <Style Selector="^[IsCurrentMonth=True]">
+            <Setter Property="Foreground" Value="#FFFFFF"/>
+        </Style>
+        <Style Selector="^:selected">
+            <Setter Property="Background" Value="#FFFFFF"/>
+            <Setter Property="Foreground" Value="#000000"/>
+        </Style>
+    </Style>
+</Styles>

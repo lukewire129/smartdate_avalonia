@@ -1,0 +1,38 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:SmartDateControl.Themes.Units">
+    <Styles.Resources>
+        <Geometry x:Key="ChevronLeftGeometry">M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z</Geometry>
+        <Geometry x:Key="ChevronRightGeometry">M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z</Geometry>
+    </Styles.Resources>
+    <Design.PreviewWith>
+        <Grid ColumnDefinitions="Auto,Auto" Background="#212121">
+            <controls:ChevronButton x:Name="PART_Left" Tag="Left"/>
+            <controls:ChevronButton x:Name="PART_Right" Tag="Right" Grid.Column="1"/>
+        </Grid>
+    </Design.PreviewWith>
+
+    <Style Selector="controls|ChevronButton">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="#11FFFFFF" />
+        <Setter Property="Margin" Value="10 10 10 5" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid Background="{TemplateBinding Background}">
+                    <Path x:Name="Path" Fill="{TemplateBinding Foreground}" Width="12" Height="12" Stretch="Uniform" />
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+        <Style Selector="^[Tag=Left] /template/ Path#Path">
+            <Setter Property="Data" Value="{StaticResource ChevronLeftGeometry}" />
+        </Style>
+        <Style Selector="^[Tag=Right] /template/ Path#Path">
+            <Setter Property="Data" Value="{StaticResource ChevronRightGeometry}" />
+        </Style>
+        <Style Selector="^:pointerover">
+            <Setter Property="Foreground" Value="#FFFFFF" />
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
+    </Style>
+</Styles>

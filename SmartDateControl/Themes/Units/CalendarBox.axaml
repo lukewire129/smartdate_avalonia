@@ -1,0 +1,21 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:SmartDateControl.Themes.Units">
+    <Design.PreviewWith>
+        <controls:CalendarBox />
+    </Design.PreviewWith>
+
+    <Style Selector="controls|CalendarBox">
+        <Setter Property="SelectedValue" Value="DateFormat"/>
+        <Setter Property="Template">
+            <ControlTemplate>
+                <ItemsPresenter ItemsPanel="{TemplateBinding ItemsPanel}"/>
+            </ControlTemplate>
+        </Setter>
+        <Setter Property="ItemsPanel">
+            <ItemsPanelTemplate>
+                <UniformGrid Columns="7"/>
+            </ItemsPanelTemplate>
+        </Setter>
+    </Style>
+</Styles>

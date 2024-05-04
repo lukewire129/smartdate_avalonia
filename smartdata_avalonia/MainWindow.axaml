@@ -1,0 +1,18 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:units="clr-namespace:SmartDateControl.Themes.Units;assembly=SmartDateControl"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="smartdata_avalonia.MainWindow"
+        Title="smartdata_avalonia">
+    <Border Background="#252525"
+            Padding="100">
+        <Viewbox Width="1000" Margin="0 0 0 300">
+            <UniformGrid Columns="2" VerticalAlignment="Top">
+                <DatePicker Margin="20"/>
+                <units:SmartDate Margin="20" KeepPopupOpen="False" Width="216"/>
+            </UniformGrid>
+        </Viewbox>
+    </Border>
+</Window>

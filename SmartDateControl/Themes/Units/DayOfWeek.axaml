@@ -1,0 +1,30 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:SmartDateControl.Themes.Units">
+    <Design.PreviewWith>
+        <UniformGrid Columns="7">
+            <controls:DayOfWeek Grid.Column="0" Content="Su"/>
+            <controls:DayOfWeek Grid.Column="1" Content="Mo"/>
+            <controls:DayOfWeek Grid.Column="2" Content="Tu"/>
+            <controls:DayOfWeek Grid.Column="3" Content="We"/>
+            <controls:DayOfWeek Grid.Column="4" Content="Th"/>
+            <controls:DayOfWeek Grid.Column="5" Content="Fr"/>
+            <controls:DayOfWeek Grid.Column="6" Content="Sa"/>
+        </UniformGrid>
+    </Design.PreviewWith>
+
+    <Style Selector="controls|DayOfWeek">
+        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="FontWeight" Value="Regular"/>
+        <Setter Property="Foreground" Value="#999999"/>
+        <Setter Property="Width" Value="28"/>
+        <Setter Property="Height" Value="28"/>
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Background="{TemplateBinding Background}">
+                    <TextBlock Text="{TemplateBinding Content}" TextAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+</Styles>
