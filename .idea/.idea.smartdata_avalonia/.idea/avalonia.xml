@@ -3,12 +3,15 @@
   <component name="AvaloniaProject">
     <option name="projectPerEditor">
       <map>
+        <entry key="DemoApp/DemoApp/App.axaml" value="DemoApp/DemoApp.Browser/DemoApp.Browser.csproj" />
+        <entry key="DemoApp/DemoApp/Views/MainWindow.axaml" value="DemoApp/DemoApp.Desktop/DemoApp.Desktop.csproj" />
+        <entry key="DemoApp/MainWindow.axaml" value="DemoApp/DemoApp.csproj" />
         <entry key="SmartDateControl/Themes/Units/CalendarBox.axaml" value="smartdata_avalonia/smartdata_avalonia.csproj" />
         <entry key="SmartDateControl/Themes/Units/CalendarBoxItem.axaml" value="smartdata_avalonia/smartdata_avalonia.csproj" />
         <entry key="SmartDateControl/Themes/Units/CalendarSwitch.axaml" value="smartdata_avalonia/smartdata_avalonia.csproj" />
         <entry key="SmartDateControl/Themes/Units/ChevronButton.axaml" value="smartdata_avalonia/smartdata_avalonia.csproj" />
         <entry key="SmartDateControl/Themes/Units/DayOfWeek.axaml" value="smartdata_avalonia/smartdata_avalonia.csproj" />
-        <entry key="SmartDateControl/Themes/Units/SmartDate.axaml" value="smartdata_avalonia/smartdata_avalonia.csproj" />
+        <entry key="SmartDateControl/Themes/Units/SmartDate.axaml" value="DemoApp/DemoApp.Desktop/DemoApp.Desktop.csproj" />
         <entry key="smartdata_avalonia/App.axaml" value="smartdata_avalonia/smartdata_avalonia.csproj" />
         <entry key="smartdata_avalonia/MainWindow.axaml" value="smartdata_avalonia/smartdata_avalonia.csproj" />
       </map>

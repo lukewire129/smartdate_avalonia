@@ -1,58 +1,75 @@
-﻿<Styles xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:controls="using:SmartDateControl.Themes.Units">
-    <StyleInclude Source="CalendarSwitch.axaml"></StyleInclude>
-    <StyleInclude Source="CalendarBoxItem.axaml"></StyleInclude>
-    <StyleInclude Source="CalendarBox.axaml"></StyleInclude>
-    <StyleInclude Source="ChevronButton.axaml"></StyleInclude>
-    <StyleInclude Source="DayOfWeek.axaml"></StyleInclude>
+﻿<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:controls="using:SmartDateControl.Themes.Units"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StyleInclude Source="CalendarSwitch.axaml" />
+    <StyleInclude Source="CalendarBoxItem.axaml" />
+    <StyleInclude Source="CalendarBox.axaml" />
+    <StyleInclude Source="ChevronButton.axaml" />
+    <StyleInclude Source="DayOfWeek.axaml" />
     <Design.PreviewWith>
         <Grid Height="500" Width="500">
-            <controls:SmartDate Margin="20" KeepPopupOpen="False" Width="216"/>
+            <controls:SmartDate
+                KeepPopupOpen="False"
+                Margin="20"
+                Width="216" />
         </Grid>
     </Design.PreviewWith>
     <Style Selector="TextBlock.MonthStyle">
-        <Setter Property="Text" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=CurrentMonth,StringFormat={}{0:yyyy.MM}}"/>
-        <Setter Property="Foreground" Value="#FFFFFF"/>
-        <Setter Property="FontSize" Value="13"/>
-        <Setter Property="Margin" Value="10 10 10 5"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Text" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=CurrentMonth, StringFormat={}{0:yyyy.MM}}" />
+        <Setter Property="Foreground" Value="#FFFFFF" />
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="Margin" Value="10 10 10 5" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
     </Style>
-    
+
     <Style Selector="controls|SmartDate">
-        <Setter Property="Background" Value="#151515"/>
-        <Setter Property="Height" Value="30"/>
+        <Setter Property="Background" Value="#151515" />
+        <Setter Property="Height" Value="30" />
         <Setter Property="Template">
             <ControlTemplate>
-                 <Border Background="{TemplateBinding Background}"
-                         BorderBrush="{TemplateBinding BorderBrush}"
-                         BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="4">
-                        <Grid>
-                            <controls:CalendarSwitch x:Name="PART_Switch"/>
-                            <Popup x:Name="PART_Popup" IsTabStop="False" VerticalOffset="2" IsOpen="{Binding ElementName=PART_Switch, Path=IsChecked}">
-                                <Border Background="{TemplateBinding Background}" CornerRadius="4" Padding="10">
-                                    <Grid RowDefinitions="Auto, Auto,Auto">
-                                        <Grid ColumnDefinitions="Auto,*,Auto">
-                                            <controls:ChevronButton x:Name="PART_Left" Tag="Left"/>
-                                            <TextBlock Classes ="MonthStyle" Grid.Column="1"/>
-                                            <controls:ChevronButton x:Name="PART_Right" Tag="Right" Grid.Column="2"/>
-                                        </Grid>
-                                        <UniformGrid Columns="7" Grid.Row="1">
-                                            <controls:DayOfWeek Grid.Column="0" Content="Su"/>
-                                            <controls:DayOfWeek Grid.Column="1" Content="Mo"/>
-                                            <controls:DayOfWeek Grid.Column="2" Content="Tu"/>
-                                            <controls:DayOfWeek Grid.Column="3" Content="We"/>
-                                            <controls:DayOfWeek Grid.Column="4" Content="Th"/>
-                                            <controls:DayOfWeek Grid.Column="5" Content="Fr"/>
-                                            <controls:DayOfWeek Grid.Column="6" Content="Sa"/>
-                                        </UniformGrid>
-                                        <controls:CalendarBox Grid.Row="2" x:Name="PART_ListBox"/>
+                <Border
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="4"
+                    Width="{TemplateBinding Width}">
+                    <Grid>
+                        <controls:CalendarSwitch x:Name="PART_Switch" />
+                        <Popup
+                            IsOpen="{Binding ElementName=PART_Switch, Path=IsChecked}"
+                            IsTabStop="False"
+                            VerticalOffset="2"
+                            x:Name="PART_Popup">
+                            <Border
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="4"
+                                Padding="10">
+                                <Grid RowDefinitions="Auto, Auto,Auto">
+                                    <Grid ColumnDefinitions="Auto,*,Auto">
+                                        <controls:ChevronButton Tag="Left" x:Name="PART_Left" />
+                                        <TextBlock Classes="MonthStyle" Grid.Column="1" />
+                                        <controls:ChevronButton
+                                            Grid.Column="2"
+                                            Tag="Right"
+                                            x:Name="PART_Right" />
                                     </Grid>
-                                </Border>
-                            </Popup>
-                        </Grid>
-                    </Border>
+                                    <UniformGrid Columns="7" Grid.Row="1">
+                                        <controls:DayOfWeek Content="Su" Grid.Column="0" />
+                                        <controls:DayOfWeek Content="Mo" Grid.Column="1" />
+                                        <controls:DayOfWeek Content="Tu" Grid.Column="2" />
+                                        <controls:DayOfWeek Content="We" Grid.Column="3" />
+                                        <controls:DayOfWeek Content="Th" Grid.Column="4" />
+                                        <controls:DayOfWeek Content="Fr" Grid.Column="5" />
+                                        <controls:DayOfWeek Content="Sa" Grid.Column="6" />
+                                    </UniformGrid>
+                                    <controls:CalendarBox Grid.Row="2" x:Name="PART_ListBox" />
+                                </Grid>
+                            </Border>
+                        </Popup>
+                    </Grid>
+                </Border>
             </ControlTemplate>
         </Setter>
     </Style>

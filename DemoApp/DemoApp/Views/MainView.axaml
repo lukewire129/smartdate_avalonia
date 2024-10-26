@@ -1,0 +1,27 @@
+<UserControl
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d"
+    x:Class="DemoApp.Views.MainView"
+    x:DataType="vm:MainViewModel"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:units="clr-namespace:SmartDateControl.Themes.Units;assembly=SmartDateControl"
+    xmlns:vm="clr-namespace:DemoApp.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <UserControl.Styles>
+        <StyleInclude Source="avares://SmartDateControl/Themes/Units/SmartDate.axaml" />
+    </UserControl.Styles>
+    <Design.DataContext>
+        <!--
+            This only sets the DataContext for the previewer in an IDE,
+            to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs)
+        -->
+        <vm:MainViewModel />
+    </Design.DataContext>
+    <units:SmartDate
+        KeepPopupOpen="False"
+        Margin="20"
+        Width="216" />
+</UserControl>
